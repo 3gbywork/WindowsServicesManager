@@ -1,0 +1,2 @@
+# WindowsServicesManager
+一个基于WPF和c#的查看和管理Windows服务的小程序

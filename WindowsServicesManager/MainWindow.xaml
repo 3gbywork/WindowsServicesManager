@@ -1,0 +1,33 @@
+﻿<Window x:Class="WindowsServicesManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="NoResize"
+        Title="服务管理" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <ListView Name="lv" SelectionChanged="lv_SelectionChanged" SelectionMode="Single">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="服务名称" DisplayMemberBinding="{Binding Path=Name}" Width="290"/>
+                    <GridViewColumn Header="当前状态" DisplayMemberBinding="{Binding Path=Status}" Width="60"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Column="1">
+            <Button Name="btnStart" Content="启动服务" Margin="10" Height="30" Click="btnStart_Click"/>
+            <Button Name="btnStop" Content="停止服务" Margin="10" Height="30" Click="btnStop_Click"/>
+            <Button Name="btnRestart" Content="重启动服务" Margin="10" Height="30" Click="btnRestart_Click"/>
+            <Button Name="btnRefresh" Content="刷新" Margin="10" Height="30" Click="btnRefresh_Click"/>
+            <ToggleButton Name="btnFilter" Content="启用过滤" Margin="10" Height="30" Click="btnFilter_Click"/>
+        </StackPanel>
+        <TextBox Grid.Row="1" Name="txtFilter" FontSize="16" LostKeyboardFocus="txtFilter_LostKeyboardFocus" TextChanged="txtFilter_TextChanged"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="txtNum" FontSize="16" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

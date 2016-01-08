@@ -12,14 +12,20 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <ListView Name="lv" SelectionChanged="lv_SelectionChanged" SelectionMode="Single">
+        <!--<ListView Name="lv" SelectionChanged="lv_SelectionChanged" SelectionMode="Single">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="服务名称" DisplayMemberBinding="{Binding Path=Name}" Width="290"/>
                     <GridViewColumn Header="当前状态" DisplayMemberBinding="{Binding Path=Status}" Width="60"/>
                 </GridView>
             </ListView.View>
-        </ListView>
+        </ListView>-->
+        <DataGrid Name="lv" SelectedCellsChanged="dg_SelectedCellsChanged" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="服务名称" Binding="{Binding Path=Name}" Width="290"/>
+                <DataGridTextColumn Header="当前状态" Binding="{Binding Path=Status}" Width="60"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <StackPanel Grid.Column="1">
             <Button Name="btnStart" Content="启动服务" Margin="10" Height="30" Click="btnStart_Click"/>
             <Button Name="btnStop" Content="停止服务" Margin="10" Height="30" Click="btnStop_Click"/>

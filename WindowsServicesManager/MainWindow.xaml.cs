@@ -210,5 +210,10 @@ namespace WindowsServicesManager
             isFilterChanged = true;
         }
 
+        private void dg_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            lv_SelectionChanged(sender, null);
+        }
+
     }
 }

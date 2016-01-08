@@ -1,7 +1,8 @@
 ﻿<Window x:Class="WindowsServicesManager.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        ResizeMode="NoResize"
+        ResizeMode="CanMinimize"
+        Icon="icon.png"
         Title="服务管理" Height="350" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
